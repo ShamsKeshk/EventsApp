@@ -1,5 +1,14 @@
 # EventsApp
 
+### An application that Display Events of ViaGogo .
+### We use The Cached data incase we can't connect to remote server .
+
+#### This project is using : 
+- HILT "for dependecy Injection" ** .
+- DataBinding .
+- Kotlin .
+- Coroutinue .
+- Gson .
 
 #### Screenshots :
 ![](https://github.com/ShamsKeshk/EventsApp/blob/master/Screenshots/landing_page_to_list_events.png) 
