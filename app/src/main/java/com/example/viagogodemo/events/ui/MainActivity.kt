@@ -1,7 +1,8 @@
-package com.example.viagogodemo
+package com.example.viagogodemo.events.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.viagogodemo.R
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

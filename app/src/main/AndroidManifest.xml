@@ -14,7 +14,7 @@
         android:theme="@style/Theme.ViaGogoDemo"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".events.ui.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
