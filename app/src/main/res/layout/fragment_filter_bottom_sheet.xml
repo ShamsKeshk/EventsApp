@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="lastEventFilterCriteria"
+            type="com.example.viagogodemo.events.model.EventFilterCriteria" />
+    </data>
+
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".events.ui.FilterBottomSheetFragment">
+
+    <TextView
+        android:id="@+id/tv_filter_by_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="8dp"
+        android:textSize="18dp"
+        android:text="Filter By"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/etl_city_filter_input_field"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="City"
+        android:layout_margin="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_filter_by_title">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_city_filter_input_field"
+            android:background="@android:color/transparent"
+            android:maxLines="1"
+            android:maxLength="14"
+            android:text="@{lastEventFilterCriteria.cityQuery}"
+            android:imeOptions="actionNext"
+            android:nextFocusDown="@id/etl_price_filter_input_field"
+            android:inputType="text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/etl_price_filter_input_field"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Price €"
+        android:layout_margin="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etl_city_filter_input_field">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_price_filter_input_field"
+            android:background="@android:color/transparent"
+            android:maxLines="1"
+            android:maxLength="14"
+            android:imeOptions="actionNext"
+            android:text="@{lastEventFilterCriteria.getPriceAsString()}"
+            android:inputType="numberDecimal"
+            android:nextFocusDown="@id/btn_apply_filter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_apply_filter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="16dp"
+        android:text="Apply Filter"
+        app:layout_constraintTop_toBottomOf="@+id/etl_price_filter_input_field"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_clear_filter"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_clear_filter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Clear Filter"
+        app:layout_constraintTop_toTopOf="@+id/btn_apply_filter"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_apply_filter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_apply_filter"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

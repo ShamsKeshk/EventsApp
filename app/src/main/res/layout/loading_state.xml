@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.example.viagogodemo.events.model.Result" />
+
+
+        <variable
+            name="result"
+            type="Result" />
+
+        <variable
+            name="retryCallback"
+            type="com.example.viagogodemo.events.model.EventRetryCallback" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/loading_state"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical|center_horizontal"
+        android:orientation="vertical">
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            app:visibleGone="@{result.loading}"/>
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/iv_data_error_placeholder"
+            app:visibleGone="@{result.failed}" />
+
+        <TextView
+            android:id="@+id/tv_oops"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/data_fetching_error_message"
+            android:textColor="#CE6C6A"
+            android:textSize="20sp"
+            android:layout_marginTop="16dp"
+            app:visibleGone="@{result.failed}" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_retry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{() -> retryCallback.retry()}"
+            android:textColor="@color/white"
+            app:visibleGone="@{result.failed}"
+            android:text="@string/retry_again"
+            android:padding="16dp"
+            android:layout_marginTop="16dp"
+            app:cornerRadius="8dp"
+            app:backgroundTint="@color/cardview_dark_background"/>
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="app/src/main/res/drawable/background_filter_counter.xml" value="0.1825" />
+        <entry key="app/src/main/res/drawable/btn_retry_background.xml" value="0.229" />
+        <entry key="app/src/main/res/drawable/no_filter_data_image.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.3183876811594203" />
+        <entry key="app/src/main/res/layout/event_filter_section.xml" value="0.45" />
+        <entry key="app/src/main/res/layout/fragment_events_list.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_filter_bottom_sheet.xml" value="0.25317028985507245" />
+        <entry key="app/src/main/res/layout/item_event.xml" value="0.3183876811594203" />
+        <entry key="app/src/main/res/layout/item_event_home.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/loading_state.xml" value="0.3183876811594203" />
+        <entry key="app/src/main/res/layout/no_filter_data_found_component.xml" value="0.12037037037037036" />
+      </map>
+    </option>
+  </component>
+</project>

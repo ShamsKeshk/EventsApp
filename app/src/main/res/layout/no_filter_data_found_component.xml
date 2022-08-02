@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.example.viagogodemo.events.model.Result" />
+
+
+        <variable
+            name="result"
+            type="Result" />
+
+        <variable
+            name="eventFilterCriteria"
+            type="com.example.viagogodemo.events.model.EventFilterCriteria" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/loading_state"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical|center_horizontal"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/iv_no_filter_data_image"
+            app:visibleGone="@{!result.isContainsData()}" />
+
+        <TextView
+            android:id="@+id/tv_oops"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No Data Found for this Filter"
+            android:textColor="#CE6C6A"
+            android:textSize="20sp"
+            android:layout_marginTop="16dp"
+            app:visibleGone="@{!result.isContainsData()}" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_clear_filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            app:visibleGone="@{!result.isContainsData()}"
+            android:text="clear Filter"
+            android:padding="16dp"
+            android:layout_marginTop="16dp"
+            app:cornerRadius="8dp"
+            app:backgroundTint="@color/cardview_dark_background"/>
+
+    </LinearLayout>
+</layout>
